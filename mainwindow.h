@@ -14,8 +14,12 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
+    QString calculate_result(QString number, int input_base, int output_base);
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+
+private slots:
+    void on_calc_btn_clicked();
 
 private:
     Ui::MainWindow *ui;

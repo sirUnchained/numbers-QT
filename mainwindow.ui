@@ -16,6 +16,19 @@
   <widget class="QWidget" name="centralwidget">
    <layout class="QHBoxLayout" name="horizontalLayout_4">
     <item>
+     <spacer name="horizontalSpacer">
+      <property name="orientation">
+       <enum>Qt::Orientation::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item>
      <layout class="QVBoxLayout" name="verticalLayout_2">
       <item>
        <layout class="QVBoxLayout" name="verticalLayout">
@@ -30,7 +43,11 @@
          </widget>
         </item>
         <item>
-         <widget class="QSpinBox" name="spinBox_3"/>
+         <widget class="QLineEdit" name="user_input">
+          <property name="placeholderText">
+           <string>enter your number ...</string>
+          </property>
+         </widget>
         </item>
        </layout>
       </item>
@@ -39,14 +56,14 @@
         <item>
          <layout class="QHBoxLayout" name="horizontalLayout_2">
           <item>
-           <widget class="QLabel" name="result_base">
+           <widget class="QLabel" name="l1">
             <property name="text">
-             <string>result number base :</string>
+             <string>input base:</string>
             </property>
            </widget>
           </item>
           <item>
-           <widget class="QSpinBox" name="spinBox_2">
+           <widget class="QSpinBox" name="input_base">
             <property name="minimum">
              <number>2</number>
             </property>
@@ -60,14 +77,14 @@
         <item>
          <layout class="QHBoxLayout" name="horizontalLayout">
           <item>
-           <widget class="QLabel" name="target_base">
+           <widget class="QLabel" name="l2">
             <property name="text">
-             <string>target number base :</string>
+             <string>output base:</string>
             </property>
            </widget>
           </item>
           <item>
-           <widget class="QSpinBox" name="spinBox">
+           <widget class="QSpinBox" name="output_base">
             <property name="minimum">
              <number>2</number>
             </property>
@@ -81,7 +98,14 @@
        </layout>
       </item>
       <item>
-       <widget class="QLabel" name="label_2">
+       <widget class="QPushButton" name="calc_btn">
+        <property name="text">
+         <string>calculate</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="result">
         <property name="text">
          <string>Result</string>
         </property>
@@ -91,6 +115,19 @@
        </widget>
       </item>
      </layout>
+    </item>
+    <item>
+     <spacer name="horizontalSpacer_2">
+      <property name="orientation">
+       <enum>Qt::Orientation::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
     </item>
    </layout>
   </widget>
