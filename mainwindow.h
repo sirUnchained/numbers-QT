@@ -1,14 +1,16 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include <QComboBox>
 #include <QFormLayout>
 #include <QLabel>
 #include <QLineEdit>
+#include <QListWidget>
 #include <QMainWindow>
 #include <QPushButton>
 #include <QSpinBox>
 #include <QStackedWidget>
-#include <QtDebug>
+#include <QWidget>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -28,29 +30,26 @@ public:
 private:
     Ui::MainWindow *ui;
 
+    // main widget
     QWidget *centralWidget;
-
-    // Main page widgets
-    QFormLayout *formLayout;
-    QLineEdit *input_number;
-    QLabel *label_input_number, *label_input_number_base, *label_target_number_base, *label_result;
-    QPushButton *calc_btn;
-    QSpinBox *spin_target_base, *spin_input_base;
+    QHBoxLayout *mainLayout;
 
     // Menu widgets
-    QWidget *menuWidget;
-    QVBoxLayout *menuLayout;
-    QPushButton *menuButton;
-    QPushButton *convertBasePageBtn;
+    QWidget *sidebar;
+    QVBoxLayout *sidebarLayout;
+    QListWidget *menuList;
+    QPushButton *menuBtn;
 
     // Page container
     QStackedWidget *stackedWidget;
 
-    // Pages
-    QWidget *convertBasePage;
-    QWidget *calculatorPage;
+    // menu status
+    bool isCollapsed;
+    int sidebarWidth;
 
-    void calculate_resultt();
-    void setupMenu();
+    void createCalculatorPage();
+    void createConvertBasePages();
+    void toggleMenu();
+    void changePage(QListWidgetItem *item);
 };
 #endif // MAINWINDOW_H
