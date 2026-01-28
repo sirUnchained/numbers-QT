@@ -30,7 +30,7 @@ MainWindow::MainWindow(QWidget *parent)
     sidebarLayout->setSpacing(0);
 
     // menu button setting
-    menuBtn = new QPushButton("☰", sidebar); // آیکون بهتر
+    menuBtn = new QPushButton("Options", sidebar);
     menuBtn->setFixedHeight(50);
     menuBtn->setStyleSheet("QPushButton {"
                            "   background-color: #34495e;"
@@ -41,7 +41,6 @@ MainWindow::MainWindow(QWidget *parent)
                            "QPushButton:hover {"
                            "   background-color: #3d566e;"
                            "}");
-    connect(menuBtn, &QPushButton::clicked, this, &MainWindow::toggleMenu);
 
     // menu list setting
     menuList = new QListWidget(sidebar);
@@ -218,28 +217,11 @@ void MainWindow::createConvertBasePages()
     stackedWidget->addWidget(page);
 }
 
-void MainWindow::toggleMenu()
-{
-    if (isCollapsed) {
-        sidebar->setFixedWidth(sidebarWidth);
-        menuList->setVisible(true);
-        isCollapsed = false;
-    } else {
-        sidebar->setFixedWidth(50);
-        menuList->setVisible(false);
-        isCollapsed = true;
-    }
-}
-
 void MainWindow::changePage(QListWidgetItem *item)
 {
     // change page by selected item
     int index = menuList->row(item);
     stackedWidget->setCurrentIndex(index);
-
-    if (isCollapsed) {
-        toggleMenu();
-    }
 }
 
 MainWindow::~MainWindow()

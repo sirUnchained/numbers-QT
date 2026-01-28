@@ -23,7 +23,6 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    QString calculate_result(QString number, int input_base, int output_base);
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
@@ -49,7 +48,6 @@ private:
 
     void createCalculatorPage();
     void createConvertBasePages();
-    void toggleMenu();
     void changePage(QListWidgetItem *item);
 };
 #endif // MAINWINDOW_H
